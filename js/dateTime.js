@@ -1,5 +1,6 @@
 let errorMsg;
-
+let currentArray = [];
+let forecastArray = [];
 //display intro image
 function introfun(){
     displayTime(); 
@@ -71,9 +72,9 @@ function getCurrentWeatherReport(city)
 {   
     let flag = false;
     city = city.toUpperCase();
-    let storedcityData = JSON.parse(localStorage.getItem("cityData")) || [];
+    //let storedcityData = JSON.parse(localStorage.getItem("cityData")) || [];
     
-    for(let c of storedcityData)
+    for(let c of currentArray)
         {
             if(c == city)
                 {   
@@ -84,8 +85,8 @@ function getCurrentWeatherReport(city)
     if(flag == false)
         {
             city = city.toUpperCase();
-            storedcityData.push(city);
-            localStorage.setItem("cityData", JSON.stringify(storedcityData));
+            currentArray.push(city);
+            //localStorage.setItem("cityData", JSON.stringify(storedcityData));
 
         }
 
@@ -280,9 +281,9 @@ function showCity1(position)
 function getForecast(city){
     let flag = false;
     city = city.toUpperCase();
-    let storedcityData = JSON.parse(localStorage.getItem("forecastData")) || [];
+   // let storedcityData = JSON.parse(localStorage.getItem("forecastData")) || [];
     
-    for(let c of storedcityData)
+    for(let c of forecastArray)
         {
             if(c == city)
                 {   
@@ -293,8 +294,8 @@ function getForecast(city){
     if(flag == false)
         {
             city = city.toUpperCase();
-            storedcityData.push(city);
-            localStorage.setItem("forecastData", JSON.stringify(storedcityData));
+            forecastArray.push(city);
+            //localStorage.setItem("forecastData", JSON.stringify(storedcityData));
 
         }
 
@@ -490,9 +491,8 @@ document.getElementById("caret").addEventListener("click",
 
        let parent = document.getElementById("history");
        parent.innerHTML = "";
-       let storedcityData = JSON.parse(localStorage.getItem("cityData"))
       
-       if(storedcityData == null)
+       if(currentArray == '')
        {
             document.getElementById("dropDownContent").style.display ="none";
        }
@@ -501,10 +501,10 @@ document.getElementById("caret").addEventListener("click",
         document.getElementById("dropDownContent").style.display ="block";
        
 
-         for(let i=0; i<storedcityData.length; i++)
+         for(let i=0; i<currentArray.length; i++)
             {
                 let b = document.createElement("button");
-                b.innerHTML=storedcityData[i];
+                b.innerHTML=currentArray[i];
                 b.style.padding = "4px";
                 b.classList.add("historyID");
                 parent.appendChild(b)
@@ -546,7 +546,7 @@ document.getElementById("close").addEventListener("click",
 document.getElementById("clr").addEventListener("click",
     function(){
         document.getElementById("history").innerHTML = "";
-        localStorage.removeItem("cityData");
+        currentArray = [];
         document.getElementById("dropDownContent").style.display ="none";
 
 })
@@ -558,9 +558,9 @@ document.getElementById("caret2").addEventListener("click",
 
        let parent = document.getElementById("history2");
        parent.innerHTML = "";
-       let storedcityData = JSON.parse(localStorage.getItem("forecastData"))
+       //let storedcityData = JSON.parse(localStorage.getItem("forecastData"))
       
-       if(storedcityData == null)
+       if(forecastArray == '')
        {
             document.getElementById("dropDownContent2").style.display ="none";
        }
@@ -569,10 +569,10 @@ document.getElementById("caret2").addEventListener("click",
         document.getElementById("dropDownContent2").style.display ="block";
        
 
-         for(let i=0; i<storedcityData.length; i++)
+         for(let i=0; i<forecastArray.length; i++)
             {
                 let b = document.createElement("button");
-                b.innerHTML=storedcityData[i];
+                b.innerHTML=forecastArray[i];
                 b.style.padding = "4px";
                 b.classList.add("historyID2");
                 parent.appendChild(b)
@@ -616,7 +616,7 @@ document.getElementById("close2").addEventListener("click",
 document.getElementById("clr2").addEventListener("click",
     function(){
         document.getElementById("history2").innerHTML = "";
-        localStorage.removeItem("forecastData");
+        forecastArray = [];
         document.getElementById("dropDownContent2").style.display ="none";
 
 })
