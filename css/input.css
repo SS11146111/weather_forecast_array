@@ -1,0 +1,210 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.style{
+    width: 288px;
+    height: 350px;
+    background-color: rgb(96 165 250);
+    border-radius: 5px;
+    margin: 12px;
+    flex-shrink: 0;
+}
+
+.notFoundImg{
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto;
+    height: 300px;
+}
+
+.tdesign{
+    background-color: rgb(191 219 254);
+    border: 2px solid white;
+    border-collapse: collapse;
+    margin: 10px 20px;
+    flex-shrink: 0;
+    padding: 12px;
+    font-size: small;
+
+}
+
+.tableFlow{
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+
+}
+
+#not_found{
+    height: 320px;
+    margin-left: 10px;
+}
+
+
+.sides{
+    border: 2px solid rgb(255, 255, 255);
+    border-collapse: collapse;
+    width: 100%;
+}
+
+
+#div3{
+    background-size: cover;
+    background-position: center;
+
+}
+
+#div2{
+    background-size: cover;
+    background-position: center;
+
+}
+
+#introImg{
+    width: 600px;
+    height: 350px;
+    object-fit: fill;
+}
+
+#div3Img{
+    height: 480px;
+    width: 310px;
+    margin: 4px;
+}
+
+#paraCnd{
+    overflow-wrap: break-word;
+}
+ 
+.historyID:hover{
+
+    background-color: rgb(229, 228, 228)
+}
+
+.historyID{
+    font-size: small;
+    text-align: left;
+    border-radius: 6px;
+}
+
+.historyID2:hover{
+
+    background-color: rgb(229, 228, 228)
+}
+
+.historyID2{
+    font-size: small;
+    text-align: left;
+    border-radius: 6px;
+}
+
+#table1, #table2, #table3, #table4{
+    height: 300px;
+}
+
+@media screen and (max-width: 1536px){
+ 
+    #introImg{
+        width: 910px;
+        height: 420px;
+        object-fit: fill;
+    }
+
+    .style{
+        width: 288px;
+        height: 378px;
+        background-color: rgb(96 165 250);
+        border-radius: 5px;
+        flex-shrink: 0;
+        padding-top: 20px;
+    }
+
+    #paraCnd{
+        overflow-wrap: break-word;
+        padding: 3px;
+    }
+
+    .historyID:hover{
+
+        background-color: rgb(229, 228, 228)
+    }
+    
+    .historyID{
+        font-size: small;
+        text-align: left;
+        width: 172px;
+        border-radius: 6px;
+    }
+    
+    .historyID2:hover{
+    
+        background-color: rgb(229, 228, 228)
+    }
+    
+    .historyID2{
+        font-size: small;
+        text-align: left;
+        width: 400px;
+        border-radius: 6px;
+    }
+
+    .tdesign{
+        background-color: rgb(191 219 254);
+        border: 2px solid white;
+        border-collapse: collapse;
+        margin: 10px 20px;
+        flex-shrink: 0;
+        padding:16px 12px;
+        font-size: small;
+    
+    }
+}
+
+@media screen and (max-width: 1280px){
+
+    #introImg{
+        width: 662px;
+        height: 420px;
+        object-fit: fill;
+    }
+
+    .style{
+        width: 288px;
+        height: 380px;
+        background-color: rgb(96 165 250);
+        border-radius: 5px;
+        flex-shrink: 0;
+        padding-top: 30px;
+    }
+
+
+}
+
+@media screen  and (max-width: 1024px){
+    #introImg{
+        height: 350px;
+    }
+
+    .style{
+        width: 288px;
+        height: 326px;
+        background-color: rgb(96 165 250);
+        border-radius: 5px;
+        flex-shrink: 0;
+        padding-top: 5px;
+    }
+
+    #div3{
+        background-size: 100% 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+    
+    }
+
+}
+
+
+
+

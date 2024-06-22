@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Weather Forecast Application">
+    <meta name="keywords" content="HTML, Tailwind CSS, JavaScript, Weather Forecast Application ">
+    <meta name="author" content="Sangita Saha">
+
+    
+    <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+    <link rel="stylesheet" href="/css/output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Weather Report</title>
+</head>
+<body class="bg-fixed bg-no-repeat bg-cover overflow-auto md:overflow-auto " style="background-image: url(/images/background.png)" onload="displayTime()">
+    <!--navigation bar-->
+    <nav class="bg-gradient-to-b from-[rgb(4,40,119)] via-[rgb(26,73,228)] to-[rgb(4,40,119)] text-center p-4 z-40 flex justify-between w-[375px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] 2xl:w-[1536px] 2xl:h-[80px] xl:h-[80px] lg:h-[80px] md:h-[80px] h-[80px]">
+        <!--logo-->
+        <img src="/images/icon.png" width=20 height=5 alt="forecast-icon " class="2xl:w-[50px]">
+        <!--heading-->
+        <h1 class="text-white font-bold text-2xl 2xl:mt-[4px] 2xl:text-3xl md:ml-[80px] 2xl:ml-[40px]">Weather Report</h1>
+        <!--current date and time-->
+        <div class="flex flex-row ml-2">
+            <img src='/images/schedule.png' width=20 height=20 alt='calendar' class="self-center"/>
+            <h1 class="text-yellow-300 font-bold text-xs mt-[10px]" id="displayDate"></h1>
+        </div>        
+    </nav>
+
+    <!--additional weather data-->
+    <div class="flex flex-col md: m-4 bg-white rounded-lg shadow-2xl shadow-blue-900 lg:flex lg:flex-row xl:flex xl:justify-between lg:mt-8 ">
+        <div class = " w-80 h-[440px] md:w-[700px] md:m-[20px] 2xl:w-[320px] m-4 border-2 border-solid border-[rgb(125, 204, 230)] bg-cover bg-center lg:w-[240px] xl:w-[280px]" id="div1" style="background-image: url(/images/weather.gif) ">
+            <h3 class="text-center p-2 bg-blue-400 font-bold">Forecast</h3>
+            <table class=" bg-blue-200" id="table1"></table>
+        </div>
+        <div class = "w-80 h-[440px] md:w-[700px] 2xl:w-[320px] m-4 border-2 border-solid border-[rgb(125, 204, 230)] lg:w-[240px] xl:w-[280px]" id="div4" style="background-image: url(/images/location.gif)">
+            <h3 class="text-center p-2 bg-blue-400 font-bold">Location</h3>
+            <table class=" bg-blue-200" id="table4"></table>
+        </div>
+        <div class = "w-80 h-[440px] md:w-[700px] 2xl:w-[320px] m-4 border-2 border-solid border-[rgb(125, 204, 230)] bg-cover bg-center  lg:w-[240px] xl:w-[280px]" id="div2" style="background-image: url(/images/air_quality.gif)">
+            <h3 class="text-center p-2 bg-blue-400 font-bold">Air Quality</h3>
+            <table class=" bg-blue-200" id="table2"></table>
+        </div>
+        <div class = "w-80 h-[440px] md:w-[700px] 2xl:w-[320px] m-4 border-2 border-solid border-[rgb(125, 204, 230)] bg-blue-200  lg:w-[240px] xl:w-[280px]" id="div3" style="background-image: url(/images/no_notification.gif)">
+            <h3 class="text-center p-2 bg-blue-400 font-bold">Alerts</h3>
+            <table class=" bg-blue-200" id="table3"></table>
+        </div>
+    </div>
+    
+    <script src="/js/dataDisplay.js" ></script>
+</body>
+</html>
