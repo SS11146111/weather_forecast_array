@@ -15,7 +15,7 @@ function displayTime(){
     setInterval(()=>{
    
         //fetching current datetime
-        fetch("http://worldtimeapi.org/api/timezone/Asia/Kolkata")
+        fetch("https://worldtimeapi.org/api/timezone/Asia/Kolkata")
             .then(res => res.json())
             .then(json => {
         
@@ -91,7 +91,7 @@ function getCurrentWeatherReport(city)
         }
 
     //fetching current weather data
-    Promise.race([fetch("http://api.weatherapi.com/v1/current.json?key=b6c462720ea9421a933195817241206&q="+city+"&aqi=no"),
+    Promise.race([fetch("httpss://api.weatherapi.com/v1/current.json?key=b6c462720ea9421a933195817241206&q="+city+"&aqi=no"),
         new Promise((resolve, reject) => {
         setTimeout(() => reject(new Error("Operation timed out")), 10000);
     })])
@@ -189,7 +189,7 @@ function showCity1(position)
     //let longitude = 333333; for testing
     
     //getting city name of current position
-    Promise.race([fetch("http://api.openweathermap.org/geo/1.0/reverse?lat="+latitude+"&lon="+longitude+"&limit=1&appid=9a67710d25a248e3b44c5a1fa1391638"),new Promise((resolve, reject) => {
+    Promise.race([fetch("https://api.openweathermap.org/geo/1.0/reverse?lat="+latitude+"&lon="+longitude+"&limit=1&appid=9a67710d25a248e3b44c5a1fa1391638"),new Promise((resolve, reject) => {
         setTimeout(() => reject(new Error("Operation timed out")), 10000);
     })])
         .then(res => {
@@ -312,7 +312,7 @@ function getForecast(city){
         }
 
     //fetching extended forecast data
-    Promise.race([fetch("http://api.weatherapi.com/v1/forecast.json?key=b6c462720ea9421a933195817241206&q="+city+"&days="+days+"&aqi=no&alerts=no"),new Promise((resolve, reject) => {
+    Promise.race([fetch("https://api.weatherapi.com/v1/forecast.json?key=b6c462720ea9421a933195817241206&q="+city+"&days="+days+"&aqi=no&alerts=no"),new Promise((resolve, reject) => {
         setTimeout(() => reject(new Error("Operation timed out")), 10000);
     })])
     //fetch("http://api.weatherapi.com/v1/forecast.json?key=b6c462720ea9421a933195817241206&q=Guwahati&days="+days+"&aqi=no&alerts=no") ; for testing
@@ -437,7 +437,7 @@ function showCity2(position)
     let longitude = position.coords.longitude;
 
     //fetching city name for current position
-    Promise.race([fetch("http://api.openweathermap.org/geo/1.0/reverse?lat="+latitude+"&lon="+longitude+"&limit=1&appid=9a67710d25a248e3b44c5a1fa1391638"),new Promise((resolve, reject) => {
+    Promise.race([fetch("https://api.openweathermap.org/geo/1.0/reverse?lat="+latitude+"&lon="+longitude+"&limit=1&appid=9a67710d25a248e3b44c5a1fa1391638"),new Promise((resolve, reject) => {
         setTimeout(() => reject(new Error("Operation timed out")), 2000);
     })])
         .then(res => {

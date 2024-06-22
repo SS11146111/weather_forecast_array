@@ -6,7 +6,7 @@ function displayTime(){
 
     setInterval(()=>{
 
-        fetch("http://worldtimeapi.org/api/timezone/Asia/Kolkata")
+        fetch("https://worldtimeapi.org/api/timezone/Asia/Kolkata")
         .then(res => res.json())
         .then(json => {
     
@@ -51,7 +51,7 @@ function displayData(){
 
     if(type === "current")
         {
-            fetch("http://api.weatherapi.com/v1/current.json?key=b6c462720ea9421a933195817241206&q="+city+"&aqi=yes")
+            fetch("https://api.weatherapi.com/v1/current.json?key=b6c462720ea9421a933195817241206&q="+city+"&aqi=yes")
             //fetch("http://api.weatherapi.com/v1/current.json?key=b6c462720ea9421a933195817241206&q=Guwahati&aqi=yes")
             .then(res => res.json())
             .then(json => {
@@ -136,7 +136,7 @@ function displayData(){
     else if(type === "forecast")
         {
 
-            fetch("http://api.weatherapi.com/v1/forecast.json?key=b6c462720ea9421a933195817241206&q="+city+"&days="+days+"&aqi=yes&alerts=yes")
+            fetch("https://api.weatherapi.com/v1/forecast.json?key=b6c462720ea9421a933195817241206&q="+city+"&days="+days+"&aqi=yes&alerts=yes")
             //fetch("http://api.weatherapi.com/v1/forecast.json?key=b6c462720ea9421a933195817241206&q=Guwahati&days="+days+"&aqi=yes&alerts=yes")
             .then(res => res.json())
             .then(json => {
